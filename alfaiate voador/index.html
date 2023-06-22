@@ -6,10 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <a href="bootstrep/bootstrap.min.css"></a>
+    <script src="bootstrep/bootstrap.bundle.min.js"></script>
     <style>
         * {
             padding: 0px;
             margin: 0px;
+        }
+        
+        body{
+            background-color: #f8f9fa;
         }
 
         nav {
@@ -33,11 +39,15 @@
 
         nav h1 {
             margin-right: 50%;
+            background-color: white;
         }
 
         nav {
            border: solid 1px;
            border-top: 0;
+           margin-left: 30px;
+           margin-right: 30px;
+           background-color: white;
         }
 
         h1 {
@@ -48,7 +58,7 @@
 
         .site {
             border: solid 1px;
-            background-color: beige;
+            background-color: #faebd7;
             margin-left: 30px;
             margin-right: 30px;
         }
@@ -106,20 +116,19 @@
             padding-bottom: 35px;
         }
 
-    footer {
-    background-color: grey;
-    margin-top: 50px;
-    padding-left: 15px;
-    padding-top: 10px;
-    width: 100%;
-    right: 100%;
-    margin-left: 0%;
-    margin-right: 0% ;
-    padding: 0%;
+    .card{
+        background-color: white;
+        margin-top: 50px;
+        padding-left: 20px;
     }
-    p {
-      line-height: 100px; /* Centralizar verticalmente o conteúdo do footer */
+    .card-header{
+        border-bottom: solid 1px;
     }
+    .laterais{
+      
+        
+    }
+
     </style>
 </head>
 
@@ -302,12 +311,21 @@
             </div>
         </div>
     </div> 
-    <footer>
-       <adress>
-         Senai<br>Araguaina, To, 20940-040.
-       </adress>
-       <p>Ian - Todos os direitos Reservados - 2023</p>
-     </footer>
+
+
+
+        <div class="card">
+            <div class="card-header">
+                Apresentou
+            </div>
+            <div class="laterais">
+                <div class="card-body">
+                  <h5 class="card-title">Franz Reichelt-O Alfaiate Voador</h5>
+                  <p class="card-text">tentativa frustrada de um paraquedas.</p>
+            </div>
+            </div>
+          </div>
+    
    
 </body>
 
