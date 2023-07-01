@@ -15,41 +15,48 @@
             margin: 0px;
         }
 
-    
-        .nav-pills {
-            background-color: #d0d8e0;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            border: solid 1px;
-            border-top: solid 0px;
-            margin-bottom: 50px;
+        .container{
+        padding-top: 5%;
+        }
+        
+        .container img {
+            border-radius: 100%;
+            margin-bottom: 20px
+        }
+        .nav{
+            display: flex;
+            justify-content: center;
+            border-bottom: solid 1px;
         }
 
-        .nav-pills a {
+        .nav-link{
+            display: flex;
             color: black;
-            width: 100%;
+           text-align: center;
+           font-size: 150%;
+           padding-top: 50px;
+           align-items: center;
         }
-
-        .nav-item a {
-            font-size: 150%;
+        .links{
+            display: flex;           
+           text-align: center;           
+           align-items: center;
         }
 
         .card {
+            margin-top: 30px;
             border-radius: 0px;
             margin-right: 50px;
             margin-left: 10px;
-           background-color: ;
-
-
+            background-color: ;
         }
-
-       
 
         .card-text p {
             text-align: justify;
         }
 
         .main {
+            margin-top: 30px;
             border: solid 1px;
             margin-right: 50px;
             background-color: #fff6eb;
@@ -68,7 +75,7 @@
             padding-right: 10px;
             padding-left: 10px;
         }
-       
+
 
         section-2 {
             display: flex;
@@ -134,8 +141,8 @@
             display: flex;
             flex-direction: row-reverse;
             padding-top: 20px;
-           padding-right: 10px;
-           padding-bottom: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
         }
 
         section-6 p {
@@ -149,8 +156,8 @@
             display: flex;
             flex-direction: row;
             padding-top: 20px;
-           padding-left: 10px;
-           padding-bottom: 20px;
+            padding-left: 10px;
+            padding-bottom: 20px;
         }
 
         section-7 p {
@@ -166,78 +173,67 @@
             padding-left: 30px;
         }
 
-        section-9{
+        section-9 {
             padding-left: 50px;
         }
-        .videos{
-        padding-bottom: 20px;
-        }
 
-        .rodape {
-            background-color: #d0d8e0;
-            padding-left: 20px;
-            padding-bottom: 10px;
-            margin-left: 0px;
-            margin-right: 0px;
-            border-left: solid 1px;
-            border-right: solid 1px;
-        }
-
-        .rodape-titulo {
-            border-bottom: solid 1px;
-        }
-
-        .grupo-links {
-            display: flex;
-            flex-direction: row-reverse;
-            padding-right: 30px;
+        .videos {
             padding-bottom: 20px;
         }
 
-        .rodape h3 {
-            display: flex;
-            flex-direction: row-reverse;
-            padding-right: 55px;
-            padding-bottom: 20px;
-        }
+     
 
-        .rodape-corpo {
-            padding-top: 10px;
-        }
+
     </style>
 </head>
 
 <body>
 
-
-
-
-    <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="contato.html">contato</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="sobre.html">Sobre</a>
-        </li>
-    </ul>
-    </a>
-
+   
+    <nav class="nav">
+            <li>
+                <div class="container">
+                    <img src="imagem/redonda.jpg" alt="Bootstrap" width=50%>
+                </div>
+            </li>
+  
+            
+                <div class="links" style="margin-right: 10%;">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="contato.html">Contato</a>
+                    <a class="nav-link" href="sobre.html">Sobre</a>
+                </div>
+                
+            
+            <div class="grupo-links" style="margin-left: 0%;">
+                <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fcampaign%2Flanding.php%3F%26campaign_id%3D1661784632%26extra_1%3Ds%257Cc%257C320269324047%257Ce%257Cfacebook%257C%26placement%26creative%3D320269324047%26keyword%3Dfacebook%26partner_id%3Dgooglesem%26extra_2%3Dcampaignid%253D1661784632%2526adgroupid%253D63686352403%2526matchtype%253De%2526network%253Dg%2526source%253Dnotmobile%2526search_or_content%253Ds%2526device%253Dc%2526devicemodel%253D%2526adposition%253D%2526target%253D%2526targetid%253Dkwd-541132862%2526loc_physical_ms%253D1001780%2526loc_interest_ms%253D%2526feeditemid%253D%2526param1%253D%2526param2%253D%26gclid%3DEAIaIQobChMI2vSelYrY_wIV5BV9Ch2i3gUrEAAYASAAEgITYvD_BwE"
+                    class="social-icon-link w-inline-block">
+                    <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed39811ff2c6_social-03.svg"
+                        width="30" alt="" style="padding-right: 10px; ;" /></a>
+                <a href="https://www.instagram.com/ian.svx" class="social-icon-link w-inline-block">
+                    <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed1ad11ff2da_social-07.svg"
+                        width="30" alt="" style="padding-right: 10px;" /></a>
+                <a href="https://twitter.com/i/flow/login?input_flow_data=%7B"
+                    requested_variant"%3A"eyJsYW5nIjoicHQifQ%3D%3D"%7D" class="social-icon-link w-inline-block">
+            
+                    <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed1f5b1ff2bf_social-18.svg"
+                        width="30" alt="" style="padding-right: 10px;" /></a>
+            </div>
+      
+    </nav>
 
     <div class="d-flex flex-row mb-3">
         <div class="p-2">
             <div class="card" style="width: 10rem;">
-                <img src="imagem/redonda.jpg" class="card-img-top" alt="...">
+                <img src="imagem/10.jfif" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Franz Reichelt</h5>
                     <br>
-                        <p class="card-text">
-                            Conhecido como "O Alfaiate Voador", Franz Reichelt era um australiano que
-                            criava roupas masculinas na França durante os anos de 1900. Uma de suas invenções foi um traje
-                            de paraquedas. Isso mesmo, um traje de paraquedas.
-                        </p>
+                    <p class="card-text">
+                        Conhecido como "O Alfaiate Voador", Franz Reichelt era um australiano que
+                        criava roupas masculinas na França durante os anos de 1900. Uma de suas invenções foi um traje
+                        de paraquedas. Isso mesmo, um traje de paraquedas.
+                    </p>
                 </div>
             </div>
         </div>
@@ -407,33 +403,21 @@
 
     </div>
 
-    <div class="rodape">
-        <div class="rodape-titulo">
-            Apresentou
-        </div>
 
-        <div class="rodape-corpo">
-            <h5 class="rodape-corpo-titulo">Franz Reichelt-O Alfaiate Voador</h5>
-            <p class="rodape-corpo-titulo">tentativa frustrada de um paraquedas.</p>
-        </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="sobre.html">1</a></li>
+          <li class="page-item"><a class="page-link" href="index.html">2</a></li>
+          <li class="page-item"><a class="page-link" href="contato.html">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Proximo</a>
+          </li>
+        </ul>
+      </nav>
 
-        <h3>Redes Sociais</h3>
-        <div class="grupo-links">
-            <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fcampaign%2Flanding.php%3F%26campaign_id%3D1661784632%26extra_1%3Ds%257Cc%257C320269324047%257Ce%257Cfacebook%257C%26placement%26creative%3D320269324047%26keyword%3Dfacebook%26partner_id%3Dgooglesem%26extra_2%3Dcampaignid%253D1661784632%2526adgroupid%253D63686352403%2526matchtype%253De%2526network%253Dg%2526source%253Dnotmobile%2526search_or_content%253Ds%2526device%253Dc%2526devicemodel%253D%2526adposition%253D%2526target%253D%2526targetid%253Dkwd-541132862%2526loc_physical_ms%253D1001780%2526loc_interest_ms%253D%2526feeditemid%253D%2526param1%253D%2526param2%253D%26gclid%3DEAIaIQobChMI2vSelYrY_wIV5BV9Ch2i3gUrEAAYASAAEgITYvD_BwE"
-                class="social-icon-link w-inline-block">
-                <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed39811ff2c6_social-03.svg"
-                    width="50" alt="" style="padding-right: 10px;" /></a>
-            <a href="https://www.instagram.com/ian.svx" class="social-icon-link w-inline-block">
-                <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed1ad11ff2da_social-07.svg"
-                    width="50" alt="" style="padding-right: 10px;" /></a>
-            <a href="https://twitter.com/i/flow/login?input_flow_data=%7B"
-                requested_variant"%3A"eyJsYW5nIjoicHQifQ%3D%3D"%7D" class="social-icon-link w-inline-block">
-
-                <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed1f5b1ff2bf_social-18.svg"
-                    width="50" alt="" style="padding-right: 10px;" /></a>
-
-        </div>
-    </div>
 
 
 </body>
