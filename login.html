@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <form id="myForm" onsubmit="return validarFormulario()">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+        <br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <br>
+        <br>
+        <button type="submit">enviar</button>
+        <p id="mensagem" style="color: blue;"></p>
+    </form>
+    
+    <script>
+        function validarFormulario() {
+            const nome = document.getElementById("nome").value;
+            const senha = document.getElementById("senha").value;
+            const mensagem = document.getElementById("mensagem");
+
+            if ((nome === "charlie" && senha === "letmein") ||
+                (nome === "alice" && senha === "12345") ||
+                (nome === "bob" && senha === "qwerty")) {
+                mensagem.style.color = "green";
+                mensagem.textContent = "Bem-vindo!";
+                return true;
+            } else {
+                mensagem.style.color = "red";
+                mensagem.textContent = "Erro: Usuário ou senha inválidos.";
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
