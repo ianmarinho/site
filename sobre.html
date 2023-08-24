@@ -10,37 +10,27 @@
     <script src="bootstrep/bootstrap.bundle.min.js"></script>
 
     <style>
-     * {
+       * {
             padding: 0px;
             margin: 0px;
         }
 
-        .container{
-        padding-top: 5%;
-        }
-        
-        .container img {
-            border-radius: 100%;
-            margin-bottom: 20px
-        }
-        .nav{
-            display: flex;
-            justify-content: center;
-            border-bottom: solid 1px;
+        body{
+        background-color: #f0f0f0;
         }
 
-        .nav-link{
-            display: flex;
-            color: black;
-           text-align: center;
-           font-size: 150%;
-           padding-top: 50px;
-           align-items: center;
+        .cabecalho{
+        background-color: white;
+        margin-bottom: 0px;
         }
-        .links{
-            display: flex;           
-           text-align: center;           
-           align-items: center;
+
+
+        .container {
+            display: flex;
+            width: 300px;
+            margin-left: 78%;
+            border: solid 1px;
+            background-color: white;
         }
 
         .card {
@@ -57,9 +47,8 @@
 
         .main {
             margin-top: 30px;
-            border: solid 1px;
             margin-right: 50px;
-            background-color: #fff6eb;
+            background-color: white;
         }
 
         section-1 p{
@@ -67,45 +56,71 @@
         line-height: 30px;
         text-align: justify;
         }
-       
     </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // Função para buscar dados meteorológicos e atualizar o cabeçalho
+    function updateWeather() {
+        const apiKey = 'a33d838552ed16ddd7c243afe0e7ffd6';
+        const city = 'Araguaina';
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pt_br`;
+
+        $.ajax({
+            url: weatherUrl,
+            method: 'GET',
+            success: function (data) {
+                const weather = data.weather[0].description;
+                const temperature = data.main.temp;
+
+                const weatherElement = document.getElementById('weather');
+                const temperatureElement = document.getElementById('temperature');
+                const cityElement = document.getElementById('city');
+
+                weatherElement.textContent = `Clima: ${weather}`;
+                temperatureElement.textContent = `Temperatura: ${temperature}°C`;
+                cityElement.textContent = `cidade: ${city}`;
+
+            },
+            error: function () {
+                console.log('Falha ao buscar dados meteorológicos');
+            }
+        });
+    }
+
+    // Chama a função updateWeather quando o documento estiver pronto
+
+    $(document).ready(function () {
+        updateWeather();
+    });
+</script>
+
+
+
 </head>
 
 <body>
 
-    <nav class="nav">
-        <li>
-            <div class="container">
-                <img src="imagem/redonda.jpg" alt="Bootstrap" width=50%>
-            </div>
-        </li>
-
-        
-            <div class="links" style="margin-right: 10%;">
-                <a class="nav-link" href="index.html">Inicio</a>
-                <a class="nav-link" href="contato.html">Contato</a>
-                <a class="nav-link" href="sobre.html">Sobre</a>
-            </div>
-            
-        
-        <div class="grupo-links" style="margin-left: 0%;">
-            <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fcampaign%2Flanding.php%3F%26campaign_id%3D1661784632%26extra_1%3Ds%257Cc%257C320269324047%257Ce%257Cfacebook%257C%26placement%26creative%3D320269324047%26keyword%3Dfacebook%26partner_id%3Dgooglesem%26extra_2%3Dcampaignid%253D1661784632%2526adgroupid%253D63686352403%2526matchtype%253De%2526network%253Dg%2526source%253Dnotmobile%2526search_or_content%253Ds%2526device%253Dc%2526devicemodel%253D%2526adposition%253D%2526target%253D%2526targetid%253Dkwd-541132862%2526loc_physical_ms%253D1001780%2526loc_interest_ms%253D%2526feeditemid%253D%2526param1%253D%2526param2%253D%26gclid%3DEAIaIQobChMI2vSelYrY_wIV5BV9Ch2i3gUrEAAYASAAEgITYvD_BwE"
-                class="social-icon-link w-inline-block">
-                <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed39811ff2c6_social-03.svg"
-                    width="30" alt="" style="padding-right: 10px; ;" /></a>
-            <a href="https://www.instagram.com/ian.svx" class="social-icon-link w-inline-block">
-                <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed1ad11ff2da_social-07.svg"
-                    width="30" alt="" style="padding-right: 10px;" /></a>
-            <a href="https://twitter.com/i/flow/login?input_flow_data=%7B"
-                requested_variant"%3A"eyJsYW5nIjoicHQifQ%3D%3D"%7D" class="social-icon-link w-inline-block">
-        
-                <img src="https://assets.website-files.com/5e4b1a54e48aed761d1ff229/5e4b1a54e48aed1f5b1ff2bf_social-18.svg"
-                    width="30" alt="" style="padding-right: 10px;" /></a>
+    <div class="cabecalho">
+        <div class="container">
+            <!-- Dentro da tag <nav>, adicione espaços reservados para clima e temperatura -->
+            <div id="weather" class="links" style="margin-right: 10%;"></div>
+            <div id="temperature" class="links" style="margin-right: 10%;"></div>
+            <div id="city" class="links" style="margin-right: 10%;"></div>
         </div>
-  
-</nav>
 
-
+        <ul class="nav justify-content-center" style="padding-bottom: 30px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="principal.html" style="color: black; font-size: x-large;" >Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.html" style="color: black; font-size: x-large;">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contato.html" style="color: black; font-size: x-large;">Fale Conosco</a>
+            </li>
+          </ul>
+    </div>
 
 <div class="container-fluid">
     <div class="d-flex flex-row mb-3">
@@ -125,61 +140,141 @@
         <div class="main">
             <div class="p-2">
                 <section-1>
-                    <p> 
-                        Seja você um entusiasta, um profissional ou apenas um curioso, este é o lugar ideal para encontrar
-                        informações relevantes, dicas úteis e recursos valiosos.
-                        <br>
-                        Aqui no nosso site, nos dedicamos a fornecer
-                        conteúdo de qualidade em uma ampla variedade de áreas.
-                        <br>  
-                        Explore nosso conteúdo:
-                        <br>
-                        Artigos informativos:
-                        <br>
-                        Nossa equipe de especialistas está sempre empenhada em trazer os tópicos mais
-                        interessantes e atualizados para você. Dos avanços tecnológicos às últimas tendências em saúde, moda,
-                        esportes e muito mais, você encontrará uma rica fonte de conhecimento em nossos artigos.
-                        <br>         
-                        Tutoriais e guias passo a passo:
-                        <br>
-                        Aprenda com os melhores! Nossos tutoriais e guias detalhados são projetados
-                        para ajudá-lo a dominar novas habilidades e aprimorar seu conhecimento em diversos campos. 
-                        Se você está
-                        procurando aprender a tocar um instrumento musical, desenvolver habilidades de programação ou explorar
-                        técnicas de pintura, temos o material certo para você. 
-                        <br>                
-                        Podcasts e entrevistas: 
-                        <br>
-                        Fique por dentro das últimas novidades e perspectivas através dos nossos podcasts e
-                        entrevistas exclusivas. Converse com especialistas, conheça histórias inspiradoras e mergulhe em discussões
-                        Recursos para download: Estamos comprometidos em fornecer ferramentas úteis para facilitar sua jornada.
-                        Nesta seção, você encontrará eBooks, modelos, planilhas e muito mais, tudo projetado para tornar sua vida
-                        mais produtiva e eficiente.
-                        Comunidade envolvente: Junte-se a uma comunidade vibrante de pessoas apaixonadas por conhecimento.
-                        Conecte-se com outros membros, compartilhe suas ideias e experiências, e faça parte de discussões
-                        enriquecedoras que podem levar a novas descobertas.
-                        Explore nosso site e aproveite tudo o que temos a oferecer. Não se esqueça de se inscrever em nossa
-                        newsletter para receber atualizações regulares diretamente em sua caixa de entrada. Se você tiver alguma
-                        dúvida, sugestão ou desejar colaborar conosco, entre em contato através do formulário de contato.
-                        Obrigado por visitar nosso site e desejamos a você uma jornada inspiradora de aprendizado e crescimento!
-                    </p>
+                    **Título: Conheça Mais Sobre a Nossa Empresa**
+                    <br>
+                    1. **Quem somos e qual é a nossa missão?**
+                    <br>
+                       Somos uma equipe apaixonada por tecnologia e inovação, dedicada a criar soluções que simplificam a vida das pessoas. Nossa missão é tornar a tecnologia acessível e útil para todos.
+                    <br>
+
+                    2. **Qual é a história por trás da nossa empresa/organização?**
+                    <br>
+                       Nossa empresa nasceu de uma ideia simples: transformar complexidade em simplicidade. Desde então, temos trabalhado incansavelmente para oferecer produtos intuitivos e eficazes.
+                    <br>
+
+                    3. **Quais são os valores fundamentais que guiam nossas ações?**
+                    <br>
+                       Nossos valores incluem inovação, excelência, empatia e responsabilidade. Eles são a base de tudo o que fazemos e nos orientam em cada decisão que tomamos.
+                    <br>
+
+                    4. **O que nos diferencia dos nossos concorrentes?**
+                    <br>
+                       Nossa abordagem centrada no usuário e nossa busca contínua pela excelência nos diferencia. Além disso, nosso compromisso com a transparência e a qualidade é incomparável.
+                    <br>
+
+                    5. **Quais são os principais produtos/serviços que oferecemos?**
+                    <br>
+                       Oferecemos uma variedade de produtos tecnológicos, desde aplicativos de produtividade até soluções de segurança cibernética, todos projetados para tornar a vida digital mais fácil e segura.
+                    <br>
+
+                    6. **Como a nossa empresa/organização foi fundada?**
+                    <br>
+                       Nossa empresa foi fundada por um grupo de amigos com formação em tecnologia e paixão por resolver problemas complexos. Juntos, decidimos criar produtos que simplificassem a vida das pessoas.
+                    <br>
+
+                    7. **Quem são as pessoas por trás do nosso sucesso? Apresente a equipe.**
+                    <br>
+                       Nossa equipe é composta por desenvolvedores talentosos, designers criativos, especialistas em segurança e suporte dedicado. Somos um grupo diversificado que compartilha uma visão comum.
+                    <br>
+
+                    8. **Quais são as conquistas significativas que alcançamos até agora?**
+                    <br>
+                       Ao longo dos anos, fomos reconhecidos com diversos prêmios de inovação e excelência. Além disso, alcançamos milhões de usuários satisfeitos em todo o mundo.
+                    <br>
+
+                    9. **Como estamos contribuindo para a nossa comunidade ou setor?**
+                    <br>
+                       Acreditamos na responsabilidade social e estamos envolvidos em iniciativas de alfabetização digital para jovens e em projetos de tecnologia sustentável para reduzir nosso impacto ambiental.
+                    <br>
+
+                    10. **Qual é a visão de longo prazo que temos para o nosso futuro?**
+                    <br>
+                        Nossa visão é sermos líderes globais em soluções tecnológicas inovadoras que melhoram a vida das pessoas. Queremos ser reconhecidos como uma força positiva de transformação digital.
+                    <br>
+                    11. **Como priorizamos a satisfação do cliente/colaborador/membro?**
+                    <br>
+                        A satisfação dos nossos clientes, colaboradores e membros é nossa prioridade número um. Valorizamos o feedback e constantemente buscamos maneiras de aprimorar nossos produtos e serviços.
+                    <br>
+
+                    12. **Quais são as parcerias estratégicas que estabelecemos?**
+                    <br>
+                        Estabelecemos parcerias com empresas líderes em tecnologia e educação para alavancar nossa expertise e oferecer soluções mais abrangentes aos nossos clientes.
+                    <br>
+
+                    13. **Como mantemos a qualidade dos nossos produtos/serviços?**
+                    <br>
+                        A qualidade é uma parte intrínseca do nosso processo de desenvolvimento. Realizamos testes rigorosos e revisões contínuas para garantir que nossos produtos atendam aos mais altos padrões.
+                    <br>
+
+                    14. **Como promovemos a diversidade e inclusão em nossa empresa/organização?**
+                    <br>
+                        Acreditamos na força da diversidade. Mantemos um ambiente inclusivo onde cada voz é ouvida e valorizada, independentemente de origem, gênero ou orientação.
+                    <br>
+
+                    15. **Quais são os prêmios ou reconhecimentos que recebemos?**
+                    <br>
+                        Fomos agraciados com diversos prêmios de inovação e design ao longo dos anos, reconhecendo nossos esforços para criar produtos que fazem a diferença.
+                    <br>
+
+                    16. **Qual é a nossa abordagem em relação à sustentabilidade e responsabilidade social?**
+                    <br>
+                        Levamos a sustentabilidade a sério, adotando práticas de negócios responsáveis e participando de projetos que promovam o bem-estar da comunidade e do meio ambiente.
+                    <br>
+
+                    17. **Como mantemos a inovação em nossos processos e produtos?**
+                    <br>
+                        A inovação é parte do nosso DNA. Fomentamos um ambiente criativo que encoraja a geração de novas ideias e a exploração de soluções revolucionárias.
+                    <br>
+
+                    18. **Quais são os marcos importantes que alcançamos ao longo dos anos?**
+                    <br>
+                        Desde nossa fundação, lançamos várias versões bem-sucedidas de nossos produtos e estabelecemos uma base sólida de clientes leais em todo o mundo.
+                    <br>
+
+                    19. **Como lidamos com desafios e adversidades?**
+                    <br>
+                        Vemos os desafios como oportunidades de crescimento. Nossa equipe está preparada para enfrentar adversidades com resiliência e determinação.
+                    <br>
+                    20. **Quais são os nossos planos de expansão ou crescimento?**
+                        Estamos focados em expandir nossa presença global, alcançar novos mercados e continuar aprimorando nossos produtos para atender às necessidades em constante evolução dos clientes.
+                    <br>
+                    21. **Como nossos clientes/colaboradores/membros podem se beneficiar conosco?**
+                        Nossos clientes se beneficiam de soluções tecnológicas que tornam suas vidas mais fáceis e seguras. Nossos colaboradores têm a oportunidade de contribuir para a inovação e crescimento contínuos.
+                    <br>
+
+                    22. **Qual é a nossa cultura de trabalho e ambiente?**
+                    <br>
+                        Fomentamos uma cultura de trabalho colaborativa, onde a comunicação aberta, o respeito mútuo e a busca pela excelência são fundamentais.
+                    <br>
+
+                    23. **Como promovemos a aprendizagem e o desenvolvimento interno?**
+                    <br>
+                        Investimos no desenvolvimento pessoal e profissional de nossos colaboradores, oferecendo treinamentos, workshops e oportunidades de crescimento.
+                    <br>
+
+                    24. **Quais são os canais de comunicação que mantemos com nosso público?**
+                    <br>
+                        Mantemos uma presença ativa
+                    <br>
+
                     </section>
             </div>
         </div> 
     </div>
+
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="sobre.html">1</a></li>
-          <li class="page-item"><a class="page-link" href="index.html">2</a></li>
-          <li class="page-item"><a class="page-link" href="contato.html">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Proximo</a>
-          </li>
+            <li class="page-item">
+                <a class="page-link" href="index.html" style="color: black;">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="principal.html" style="color: black;">1</a></li>
+            <li class="page-item"><a class="page-link" href="sobre.html" style="color: black;">2</a></li>
+            <li class="page-item"><a class="page-link" href="contato.html" style="color: black;">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="sobre.html" style="color: black;">Proximo</a>
+            </li>
         </ul>
-      </nav>
+    </nav>
 </body>
 
 </html>
