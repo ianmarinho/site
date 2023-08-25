@@ -29,7 +29,6 @@
             display: flex;
             width: 300px;
             margin-left: 78%;
-            border: solid 1px;
             background-color: white;
         }
 
@@ -73,13 +72,13 @@
                 const weather = data.weather[0].description;
                 const temperature = data.main.temp;
 
+                const cityElement = document.getElementById('city');
                 const weatherElement = document.getElementById('weather');
                 const temperatureElement = document.getElementById('temperature');
-                const cityElement = document.getElementById('city');
 
-                weatherElement.textContent = `Clima: ${weather}`;
-                temperatureElement.textContent = `Temperatura: ${temperature}°C`;
-                cityElement.textContent = `cidade: ${city}`;
+                cityElement.textContent = ` ${city}`;
+                weatherElement.textContent = ` ${weather}`;
+                temperatureElement.textContent = ` ${temperature}°C`;
 
             },
             error: function () {
@@ -101,180 +100,183 @@
 
 <body>
 
-    <div class="cabecalho">
-        <div class="container">
-            <!-- Dentro da tag <nav>, adicione espaços reservados para clima e temperatura -->
-            <div id="weather" class="links" style="margin-right: 10%;"></div>
-            <div id="temperature" class="links" style="margin-right: 10%;"></div>
-            <div id="city" class="links" style="margin-right: 10%;"></div>
+    <div class="container-fluid">
+        <div class="cabecalho">
+            <div class="container">
+                <!-- Dentro da tag <nav>, adicione espaços reservados para clima e temperatura -->
+                    <div id="city" class="links" style="margin-right: 10%;"></div>
+                <div id="weather" class="links" style="margin-right: 10%;"></div>
+                <div id="temperature" class="links" style="margin-right: 10%;"></div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand">Alfaiate Voador</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="principal.html">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sobre.html">sobre</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contato.html">contato</a>
+                      </li>
+                     
+                
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="palavras relacionadas" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">procurar</button>
+                    </form>
+
+                  </div>
+                </div>
+              </nav>
+
         </div>
-
-        <ul class="nav justify-content-center" style="padding-bottom: 30px;">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="principal.html" style="color: black; font-size: x-large;" >Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sobre.html" style="color: black; font-size: x-large;">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contato.html" style="color: black; font-size: x-large;">Fale Conosco</a>
-            </li>
-          </ul>
-    </div>
-
-<div class="container-fluid">
-    <div class="d-flex flex-row mb-3">
-        <div class="p-2">
-            <div class="card" style="width: 10rem;">
-                <img src="imagem/spider.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Ian Silva Marinho</h5>
-                    <br>
-                    <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim temporibus, sed accusamus, veritatis pariatur quam velit odio nulla atque beatae quis nisi! Nesciunt consectetur nulla qui nam fugiat ut quas?sdfasfsadfsdfdsafsdafsdafsadfdsaf
-                    
-                    </p>
+        
+        <div class="container-fluid">
+        <div class="d-flex flex-row mb-3">
+            <div class="p-2">
+                <div class="card" style="width: 10rem;">
+                    <img src="imagem/10.jfif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Franz Reichelt</h5>
+                        <br>
+                        <p class="card-text">
+                            Conhecido como "O Alfaiate Voador", Franz Reichelt era um australiano que
+                            criava roupas masculinas na França durante os anos de 1900. Uma de suas invenções foi um
+                            traje
+                            de paraquedas. Isso mesmo, um traje de paraquedas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main">
+                <div class="p-2">
+                    <section-1>
+                        **Título: Conheça Mais Sobre a Nossa Empresa**
+                        <br>
+                        1. **Quem somos e qual é a nossa missão?**
+                        <br>
+                           Somos uma equipe apaixonada por tecnologia e inovação, dedicada a criar soluções que simplificam a vida das pessoas. Nossa missão é tornar a tecnologia acessível e útil para todos.
+                        <br>
+                        2. **Qual é a história por trás da nossa empresa/organização?**
+                        <br>
+                           Nossa empresa nasceu de uma ideia simples: transformar complexidade em simplicidade. Desde então, temos trabalhado incansavelmente para oferecer produtos intuitivos e eficazes.
+                        <br>
+                        3. **Quais são os valores fundamentais que guiam nossas ações?**
+                        <br>
+                           Nossos valores incluem inovação, excelência, empatia e responsabilidade. Eles são a base de tudo o que fazemos e nos orientam em cada decisão que tomamos.
+                        <br>
+                        4. **O que nos diferencia dos nossos concorrentes?**
+                        <br>
+                           Nossa abordagem centrada no usuário e nossa busca contínua pela excelência nos diferencia. Além disso, nosso compromisso com a transparência e a qualidade é incomparável.
+                        <br>
+                        5. **Quais são os principais produtos/serviços que oferecemos?**
+                        <br>
+                           Oferecemos uma variedade de produtos tecnológicos, desde aplicativos de produtividade até soluções de segurança cibernética, todos projetados para tornar a vida digital mais fácil e segura.
+                        <br>
+                        6. **Como a nossa empresa/organização foi fundada?**
+                        <br>
+                           Nossa empresa foi fundada por um grupo de amigos com formação em tecnologia e paixão por resolver problemas complexos. Juntos, decidimos criar produtos que simplificassem a vida das pessoas.
+                        <br>
+                        7. **Quem são as pessoas por trás do nosso sucesso? Apresente a equipe.**
+                        <br>
+                           Nossa equipe é composta por desenvolvedores talentosos, designers criativos, especialistas em segurança e suporte dedicado. Somos um grupo diversificado que compartilha uma visão comum.
+                        <br>
+                        8. **Quais são as conquistas significativas que alcançamos até agora?**
+                        <br>
+                           Ao longo dos anos, fomos reconhecidos com diversos prêmios de inovação e excelência. Além disso, alcançamos milhões de usuários satisfeitos em todo o mundo.
+                        <br>
+                        9. **Como estamos contribuindo para a nossa comunidade ou setor?**
+                        <br>
+                           Acreditamos na responsabilidade social e estamos envolvidos em iniciativas de alfabetização digital para jovens e em projetos de tecnologia sustentável para reduzir nosso impacto ambiental.
+                        <br>
+                        10. **Qual é a visão de longo prazo que temos para o nosso futuro?**
+                        <br>
+                            Nossa visão é sermos líderes globais em soluções tecnológicas inovadoras que melhoram a vida das pessoas. Queremos ser reconhecidos como uma força positiva de transformação digital.
+                        <br>
+                        11. **Como priorizamos a satisfação do cliente/colaborador/membro?**
+                        <br>
+                            A satisfação dos nossos clientes, colaboradores e membros é nossa prioridade número um. Valorizamos o feedback e constantemente buscamos maneiras de aprimorar nossos produtos e serviços.
+                        <br>
+                        12. **Quais são as parcerias estratégicas que estabelecemos?**
+                        <br>
+                            Estabelecemos parcerias com empresas líderes em tecnologia e educação para alavancar nossa expertise e oferecer soluções mais abrangentes aos nossos clientes.
+                        <br>
+                        13. **Como mantemos a qualidade dos nossos produtos/serviços?**
+                        <br>
+                            A qualidade é uma parte intrínseca do nosso processo de desenvolvimento. Realizamos testes rigorosos e revisões contínuas para garantir que nossos produtos atendam aos mais altos padrões.
+                        <br>
+                        14. **Como promovemos a diversidade e inclusão em nossa empresa/organização?**
+                        <br>
+                            Acreditamos na força da diversidade. Mantemos um ambiente inclusivo onde cada voz é ouvida e valorizada, independentemente de origem, gênero ou orientação.
+                        <br>
+                        15. **Quais são os prêmios ou reconhecimentos que recebemos?**
+                        <br>
+                            Fomos agraciados com diversos prêmios de inovação e design ao longo dos anos, reconhecendo nossos esforços para criar produtos que fazem a diferença.
+                        <br>
+                        16. **Qual é a nossa abordagem em relação à sustentabilidade e responsabilidade social?**
+                        <br>
+                            Levamos a sustentabilidade a sério, adotando práticas de negócios responsáveis e participando de projetos que promovam o bem-estar da comunidade e do meio ambiente.
+                        <br>
+                        17. **Como mantemos a inovação em nossos processos e produtos?**
+                        <br>
+                            A inovação é parte do nosso DNA. Fomentamos um ambiente criativo que encoraja a geração de novas ideias e a exploração de soluções revolucionárias.
+                        <br>
+                        18. **Quais são os marcos importantes que alcançamos ao longo dos anos?**
+                        <br>
+                            Desde nossa fundação, lançamos várias versões bem-sucedidas de nossos produtos e estabelecemos uma base sólida de clientes leais em todo o mundo.
+                        <br>
+                        19. **Como lidamos com desafios e adversidades?**
+                        <br>
+                            Vemos os desafios como oportunidades de crescimento. Nossa equipe está preparada para enfrentar adversidades com resiliência e determinação.
+                        <br>
+                        20. **Quais são os nossos planos de expansão ou crescimento?**
+                            Estamos focados em expandir nossa presença global, alcançar novos mercados e continuar aprimorando nossos produtos para atender às necessidades em constante evolução dos clientes.
+                        <br>
+                        21. **Como nossos clientes/colaboradores/membros podem se beneficiar conosco?**
+                            Nossos clientes se beneficiam de soluções tecnológicas que tornam suas vidas mais fáceis e seguras. Nossos colaboradores têm a oportunidade de contribuir para a inovação e crescimento contínuos.
+                        <br>
+                        22. **Qual é a nossa cultura de trabalho e ambiente?**
+                        <br>
+                            Fomentamos uma cultura de trabalho colaborativa, onde a comunicação aberta, o respeito mútuo e a busca pela excelência são fundamentais.
+                        <br>
+                        23. **Como promovemos a aprendizagem e o desenvolvimento interno?**
+                        <br>
+                            Investimos no desenvolvimento pessoal e profissional de nossos colaboradores, oferecendo treinamentos, workshops e oportunidades de crescimento.
+                        <br>
+                        24. **Quais são os canais de comunicação que mantemos com nosso público?**
+                        <br>
+                            Mantemos uma presença ativa
+                        <br>
+                        </section>
                 </div>
             </div>
         </div>
-        <div class="main">
-            <div class="p-2">
-                <section-1>
-                    **Título: Conheça Mais Sobre a Nossa Empresa**
-                    <br>
-                    1. **Quem somos e qual é a nossa missão?**
-                    <br>
-                       Somos uma equipe apaixonada por tecnologia e inovação, dedicada a criar soluções que simplificam a vida das pessoas. Nossa missão é tornar a tecnologia acessível e útil para todos.
-                    <br>
-
-                    2. **Qual é a história por trás da nossa empresa/organização?**
-                    <br>
-                       Nossa empresa nasceu de uma ideia simples: transformar complexidade em simplicidade. Desde então, temos trabalhado incansavelmente para oferecer produtos intuitivos e eficazes.
-                    <br>
-
-                    3. **Quais são os valores fundamentais que guiam nossas ações?**
-                    <br>
-                       Nossos valores incluem inovação, excelência, empatia e responsabilidade. Eles são a base de tudo o que fazemos e nos orientam em cada decisão que tomamos.
-                    <br>
-
-                    4. **O que nos diferencia dos nossos concorrentes?**
-                    <br>
-                       Nossa abordagem centrada no usuário e nossa busca contínua pela excelência nos diferencia. Além disso, nosso compromisso com a transparência e a qualidade é incomparável.
-                    <br>
-
-                    5. **Quais são os principais produtos/serviços que oferecemos?**
-                    <br>
-                       Oferecemos uma variedade de produtos tecnológicos, desde aplicativos de produtividade até soluções de segurança cibernética, todos projetados para tornar a vida digital mais fácil e segura.
-                    <br>
-
-                    6. **Como a nossa empresa/organização foi fundada?**
-                    <br>
-                       Nossa empresa foi fundada por um grupo de amigos com formação em tecnologia e paixão por resolver problemas complexos. Juntos, decidimos criar produtos que simplificassem a vida das pessoas.
-                    <br>
-
-                    7. **Quem são as pessoas por trás do nosso sucesso? Apresente a equipe.**
-                    <br>
-                       Nossa equipe é composta por desenvolvedores talentosos, designers criativos, especialistas em segurança e suporte dedicado. Somos um grupo diversificado que compartilha uma visão comum.
-                    <br>
-
-                    8. **Quais são as conquistas significativas que alcançamos até agora?**
-                    <br>
-                       Ao longo dos anos, fomos reconhecidos com diversos prêmios de inovação e excelência. Além disso, alcançamos milhões de usuários satisfeitos em todo o mundo.
-                    <br>
-
-                    9. **Como estamos contribuindo para a nossa comunidade ou setor?**
-                    <br>
-                       Acreditamos na responsabilidade social e estamos envolvidos em iniciativas de alfabetização digital para jovens e em projetos de tecnologia sustentável para reduzir nosso impacto ambiental.
-                    <br>
-
-                    10. **Qual é a visão de longo prazo que temos para o nosso futuro?**
-                    <br>
-                        Nossa visão é sermos líderes globais em soluções tecnológicas inovadoras que melhoram a vida das pessoas. Queremos ser reconhecidos como uma força positiva de transformação digital.
-                    <br>
-                    11. **Como priorizamos a satisfação do cliente/colaborador/membro?**
-                    <br>
-                        A satisfação dos nossos clientes, colaboradores e membros é nossa prioridade número um. Valorizamos o feedback e constantemente buscamos maneiras de aprimorar nossos produtos e serviços.
-                    <br>
-
-                    12. **Quais são as parcerias estratégicas que estabelecemos?**
-                    <br>
-                        Estabelecemos parcerias com empresas líderes em tecnologia e educação para alavancar nossa expertise e oferecer soluções mais abrangentes aos nossos clientes.
-                    <br>
-
-                    13. **Como mantemos a qualidade dos nossos produtos/serviços?**
-                    <br>
-                        A qualidade é uma parte intrínseca do nosso processo de desenvolvimento. Realizamos testes rigorosos e revisões contínuas para garantir que nossos produtos atendam aos mais altos padrões.
-                    <br>
-
-                    14. **Como promovemos a diversidade e inclusão em nossa empresa/organização?**
-                    <br>
-                        Acreditamos na força da diversidade. Mantemos um ambiente inclusivo onde cada voz é ouvida e valorizada, independentemente de origem, gênero ou orientação.
-                    <br>
-
-                    15. **Quais são os prêmios ou reconhecimentos que recebemos?**
-                    <br>
-                        Fomos agraciados com diversos prêmios de inovação e design ao longo dos anos, reconhecendo nossos esforços para criar produtos que fazem a diferença.
-                    <br>
-
-                    16. **Qual é a nossa abordagem em relação à sustentabilidade e responsabilidade social?**
-                    <br>
-                        Levamos a sustentabilidade a sério, adotando práticas de negócios responsáveis e participando de projetos que promovam o bem-estar da comunidade e do meio ambiente.
-                    <br>
-
-                    17. **Como mantemos a inovação em nossos processos e produtos?**
-                    <br>
-                        A inovação é parte do nosso DNA. Fomentamos um ambiente criativo que encoraja a geração de novas ideias e a exploração de soluções revolucionárias.
-                    <br>
-
-                    18. **Quais são os marcos importantes que alcançamos ao longo dos anos?**
-                    <br>
-                        Desde nossa fundação, lançamos várias versões bem-sucedidas de nossos produtos e estabelecemos uma base sólida de clientes leais em todo o mundo.
-                    <br>
-
-                    19. **Como lidamos com desafios e adversidades?**
-                    <br>
-                        Vemos os desafios como oportunidades de crescimento. Nossa equipe está preparada para enfrentar adversidades com resiliência e determinação.
-                    <br>
-                    20. **Quais são os nossos planos de expansão ou crescimento?**
-                        Estamos focados em expandir nossa presença global, alcançar novos mercados e continuar aprimorando nossos produtos para atender às necessidades em constante evolução dos clientes.
-                    <br>
-                    21. **Como nossos clientes/colaboradores/membros podem se beneficiar conosco?**
-                        Nossos clientes se beneficiam de soluções tecnológicas que tornam suas vidas mais fáceis e seguras. Nossos colaboradores têm a oportunidade de contribuir para a inovação e crescimento contínuos.
-                    <br>
-
-                    22. **Qual é a nossa cultura de trabalho e ambiente?**
-                    <br>
-                        Fomentamos uma cultura de trabalho colaborativa, onde a comunicação aberta, o respeito mútuo e a busca pela excelência são fundamentais.
-                    <br>
-
-                    23. **Como promovemos a aprendizagem e o desenvolvimento interno?**
-                    <br>
-                        Investimos no desenvolvimento pessoal e profissional de nossos colaboradores, oferecendo treinamentos, workshops e oportunidades de crescimento.
-                    <br>
-
-                    24. **Quais são os canais de comunicação que mantemos com nosso público?**
-                    <br>
-                        Mantemos uma presença ativa
-                    <br>
-
-                    </section>
-            </div>
-        </div> 
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="index.html" style="color: black;">Anterior</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="principal.html" style="color: black;">1</a></li>
+                <li class="page-item"><a class="page-link" href="sobre.html" style="color: black;">2</a></li>
+                <li class="page-item"><a class="page-link" href="contato.html" style="color: black;">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="sobre.html" style="color: black;">Proximo</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="index.html" style="color: black;">Anterior</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="principal.html" style="color: black;">1</a></li>
-            <li class="page-item"><a class="page-link" href="sobre.html" style="color: black;">2</a></li>
-            <li class="page-item"><a class="page-link" href="contato.html" style="color: black;">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="sobre.html" style="color: black;">Proximo</a>
-            </li>
-        </ul>
-    </nav>
+    
 </body>
 
 </html>

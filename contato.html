@@ -20,7 +20,7 @@
     }
 
     .cabecalho {
-        background-color: white;
+        background-color: #f0f0f0; 
         margin-bottom: 0px;
     }
 
@@ -29,7 +29,6 @@
         display: flex;
         width: 300px;
         margin-left: 78%;
-        border: solid 1px;
         background-color: white;
     }
 
@@ -60,6 +59,7 @@
         text-align: justify;
     }
 </style>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     // Função para buscar dados meteorológicos e atualizar o cabeçalho
@@ -75,13 +75,13 @@
                 const weather = data.weather[0].description;
                 const temperature = data.main.temp;
 
+                const cityElement = document.getElementById('city');
                 const weatherElement = document.getElementById('weather');
                 const temperatureElement = document.getElementById('temperature');
-                const cityElement = document.getElementById('city');
 
-                weatherElement.textContent = `Clima: ${weather}`;
-                temperatureElement.textContent = `Temperatura: ${temperature}°C`;
-                cityElement.textContent = `cidade: ${city}`;
+                cityElement.textContent = ` ${city}`;
+                weatherElement.textContent = ` ${weather}`;
+                temperatureElement.textContent = ` ${temperature}°C`;
 
             },
             error: function () {
@@ -98,199 +98,179 @@
 </script>
 
 <body>
-    <div class="container-fluid">
-
-        <div class="cabecalho">
-
-            <div class="container">
-                <!-- Dentro da tag <nav>, adicione espaços reservados para clima e temperatura -->
-                <div id="weather" class="links" style="margin-right: 10%;"></div>
-                <div id="temperature" class="links" style="margin-right: 10%;"></div>
-                <div id="city" class="links" style="margin-right: 10%;"></div>
-            </div>
-
-            <ul class="nav justify-content-center" style="padding-bottom: 30px;">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="principal.html"
-                        style="color: black; font-size: x-large;">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sobre.html" style="color: black; font-size: x-large;">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contato.html" style="color: black; font-size: x-large;">Fale Conosco</a>
-                </li>
-            </ul>
-        </div>
-
+    
 
         <div class="container-fluid">
-            <div class="d-flex flex-row mb-3">
-                <div class="p-2">
-                    <div class="card" style="width: 10rem;">
-                        <img src="imagem/spider.jfif" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Ian Silva Marinho</h5>
-                            <br>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim temporibus, sed
-                                accusamus, veritatis pariatur quam velit odio nulla atque beatae quis nisi! Nesciunt
-                                consectetur nulla qui nam fugiat ut quas?sdfasfsadfsdfdsafsdafsdafsadfdsaf
-
-                            </p>
-                        </div>
-                    </div>
+            <div class="cabecalho">
+                <div class="container">
+                    <!-- Dentro da tag <nav>, adicione espaços reservados para clima e temperatura -->
+                        <div id="city" class="links" style="margin-right: 10%;"></div>
+                    <div id="weather" class="links" style="margin-right: 10%;"></div>
+                    <div id="temperature" class="links" style="margin-right: 10%;"></div>
                 </div>
-                <div class="main">
-                    <div class="p-2">
-                        <section-1>
-                            <br>
-                            <h1 style="text-align: center;"> Fale Conosco</h1>
-                            <br>
-
-                            <h6 style="text-align: center;"> Se você tiver alguma dúvida, comentário, sugestão ou apenas
-                                quiser dizer olá, ficaremos felizes em ouvi-lo </h6>
-                            <br>
-
-                            <!-- Certifique-se de não alterar a ação do formulário-->
-                            <form action="https://api.staticforms.xyz/submit" method="post">
-                                <!-- Substitua por accessKey enviado para seu e-mail -->
-                                <input type="hidden" name="accessKey" value="5b110b94-1d10-48a9-bc5d-dc37e5cb692a">
-                                <!-- Obrigatório -->
-
-                                <h6> Digite seu NOME
-                                    <input type="text" name="name"> <!-- Opcional -->
-                                </h6>
-
-                                <br>
-
-                                <h6> Digite seu email
-                                    <input type="text" name="email"> <!-- Opcional -->
-                                </h6>
-
-                                <br>
-
-                                <h6> Digite seu telefone
-                                    <input type="text" name="phone"> <!-- Opcional -->
-                                </h6>
-
-                                <br>
-
-                                <h6> Digite o assunto a ser tratado
-                                    <input type="text" name="subject"> <!-- Opcional -->
-                                </h6>
-
-                                <br>
-
-                                <h6> INFORME SEU PROBLEMA (DETALHADO SE POSSIVEL)
-                                    <input type="menssage" name="subject"><!-- Opcional -->
-                                </h6>
-
-                                <br>
-
-                                <!-- Se você deseja que replyTo seja definido para um e-mail específico -->
-
-                                <input type="text" name="replyTo" value="contateste8119@gmail.com"> <!-- Opcional -->
-
-                                <br>
-
-                                <!-- Especifique @ como resposta ao valor se desejar que seja o e-mail do cliente -->
-
-                                <input type="hidden" name="replyTo" value="@"><!-- Opcional -->
-
-                                <!-- Se você deseja que o formulário seja redirecionado para um URL específico após o envio -->
-
-                                <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
-                                <!-- Opcional -->
-
-                                <br>
-
-                                <input type="submit" value="Submit" />
-
-                            </form>
-                            </section>
+    
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                      <a class="navbar-brand">Alfaiate Voador</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="principal.html">Inicio</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sobre.html">sobre</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="contato.html">contato</a>
+                          </li>
+                         
+                    
+                        </ul>
+    
+                        <form class="d-flex" role="search">
+                          <input class="form-control me-2" type="search" placeholder="palavras relacionadas" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">procurar</button>
+                        </form>
+    
+                      </div>
                     </div>
-                    <br>
-                    <br>
-
-                    <section-2>
-                        <h5 style="text-align: center;">Informacoes da empresa</h5>
-                        <br>
-                        <br>
-
-                        Utilize as informações abaixo para entrar em contato conosco:
-
-                        <br>
-                        <br>
-
-                        Endereço:
-                        Setor Urbano
-                        <br>
-                        <br>
-
-                        Araguaina, Tocantins
-                        <br>
-                        <br>
-
-                        CEP: 12345-678
-                        <br>
-                        <br>
-
-                        Telefone:
-                        (63) 99279-1987
-                        <br>
-                        <br>
-
-                        E-mail:
-                        iansilvamarinho593@gmail.com
-                        <br>
-                        <br>
-
-                        Horário de Atendimento:
-                        <br>
-                        <br>
-
-                        Segunda a Sexta: 18h às 00h
-                        <br>
-                        <br>
-
-                        Sábado e Domingo: Fechado
-                        <br>
-                        <br>
-
-                        Você também pode preencher o formulário abaixo e entraremos em contato com você o mais
-                        breve possível:
-                        <br>
-                        <br>
-
-                        [Formulário de Contato]
-                        <br>
-                        <br>
-
-                        Agradecemos o seu interesse e aguardamos o seu contato! Faremos o possível para
-                        responder a todas as
-                        mensagens o mais rápido possível e estamos ansiosos para ajudar você no que for
-                        necessário
-                        <br>
-                        <br>
-
-                    </section-2>
-                </div>
+                  </nav>
+    
             </div>
 
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="index.html" style="color: black;">Anterior</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="principal.html" style="color: black;">1</a></li>
-                    <li class="page-item"><a class="page-link" href="sobre.html" style="color: black;">2</a></li>
-                    <li class="page-item"><a class="page-link" href="contato.html" style="color: black;">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="sobre.html" style="color: black;">Proximo</a>
-                    </li>
-                </ul>
-            </nav>
+                <div class="d-flex flex-row mb-3">
+                    <div class="p-2">
+                        <div class="card" style="width: 10rem;">
+                            <img src="imagem/10.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Franz Reichelt</h5>
+                                <br>
+                                <p class="card-text">
+                                    Conhecido como "O Alfaiate Voador", Franz Reichelt era um australiano que
+                                    criava roupas masculinas na França durante os anos de 1900. Uma de suas invenções foi um
+                                    traje
+                                    de paraquedas. Isso mesmo, um traje de paraquedas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="main">
+                        <div class="p-2">
+                            <section-1>
+                                <br>
+                                <h1 style="text-align: center;"> Fale Conosco</h1>
+                                <br>
+                                <h6 style="text-align: center;"> Se você tiver alguma dúvida, comentário, sugestão ou apenas
+                                    quiser dizer olá, ficaremos felizes em ouvi-lo </h6>
+                                <br>
+                                <!-- Certifique-se de não alterar a ação do formulário-->
+                                <form action="https://api.staticforms.xyz/submit" method="post">
+                                    <!-- Substitua por accessKey enviado para seu e-mail -->
+                                    <input type="hidden" name="accessKey" value="5b110b94-1d10-48a9-bc5d-dc37e5cb692a">
+                                    <!-- Obrigatório -->
+                                    <h6> Digite seu NOME
+                                        <input type="text" name="name"> <!-- Opcional -->
+                                    </h6>
+                                    <br>
+                                    <h6> Digite seu email
+                                        <input type="text" name="email"> <!-- Opcional -->
+                                    </h6>
+                                    <br>
+                                    <h6> Digite seu telefone
+                                        <input type="text" name="phone"> <!-- Opcional -->
+                                    </h6>
+                                    <br>
+                                    <h6> Digite o assunto a ser tratado
+                                        <input type="text" name="subject"> <!-- Opcional -->
+                                    </h6>
+                                    <br>
+                                    <h6> INFORME SEU PROBLEMA (DETALHADO SE POSSIVEL)
+                                        <input type="menssage" name="subject"><!-- Opcional -->
+                                    </h6>
+                                    <br>
+                                    <!-- Se você deseja que replyTo seja definido para um e-mail específico -->
+                                    <input type="text" name="replyTo" value="contateste8119@gmail.com"> <!-- Opcional -->
+                                    <br>
+                                    <!-- Especifique @ como resposta ao valor se desejar que seja o e-mail do cliente -->
+                                    <input type="hidden" name="replyTo" value="@"><!-- Opcional -->
+                                    <!-- Se você deseja que o formulário seja redirecionado para um URL específico após o envio -->
+                                    <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
+                                    <!-- Opcional -->
+                                    <br>
+                                    <input type="submit" value="Submit" />
+                                </form>
+                                </section>
+                        </div>
+                        <br>
+                        <br>
+                        <section-2>
+                            <h1 style="text-align: center;">Informacoes da empresa</h1>
+                            <br>
+                            <br>
+                            Utilize as informações abaixo para entrar em contato conosco:
+                            <br>
+                            <br>
+                            Endereço:
+                            Setor Urbano
+                            <br>
+                            <br>
+                            Araguaina, Tocantins
+                            <br>
+                            <br>
+                            CEP: 12345-678
+                            <br>
+                            <br>
+                            Telefone:
+                            (63) 99279-1987
+                            <br>
+                            <br>
+                            E-mail:
+                            iansilvamarinho593@gmail.com
+                            <br>
+                            <br>
+                            Horário de Atendimento:
+                            <br>
+                            <br>
+                            Segunda a Sexta: 18h às 00h
+                            <br>
+                            <br>
+                            Sábado e Domingo: Fechado
+                            <br>
+                            <br>
+                            Você também pode preencher o formulário abaixo e entraremos em contato com você o mais
+                            breve possível:
+                            <br>
+                            <br>
+                            [Formulário de Contato]
+                            <br>
+                            <br>
+                            Agradecemos o seu interesse e aguardamos o seu contato! Faremos o possível para
+                            responder a todas as
+                            mensagens o mais rápido possível e estamos ansiosos para ajudar você no que for
+                            necessário
+                            <br>
+                            <br>
+                        </section-2>
+                    </div>
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="index.html" style="color: black;">Anterior</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="principal.html" style="color: black;">1</a></li>
+                        <li class="page-item"><a class="page-link" href="sobre.html" style="color: black;">2</a></li>
+                        <li class="page-item"><a class="page-link" href="contato.html" style="color: black;">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="sobre.html" style="color: black;">Proximo</a>
+                        </li>
+                    </ul>
+                </nav>
+        </div>
 
 </body>
 

@@ -18,13 +18,13 @@
             margin: 0px;
         }
 
-        body{
-        background-color: #f0f0f0;
+        body {
+            background-color: #f0f0f0;
         }
 
-        .cabecalho{
-        background-color: white;
-        margin-bottom: 0px;
+        .cabecalho {
+            background-color: #f0f0f0;
+            margin-bottom: 0px;
         }
 
 
@@ -32,8 +32,7 @@
             display: flex;
             width: 300px;
             margin-left: 78%;
-            border: solid 1px;
-            background-color: white;
+          
         }
 
 
@@ -48,7 +47,7 @@
             border-radius: 0px;
             margin-right: 40px;
             margin-left: 10px;
-            
+
         }
 
         .card-text p {
@@ -196,13 +195,13 @@
                     const weather = data.weather[0].description;
                     const temperature = data.main.temp;
 
+                    const cityElement = document.getElementById('city');
                     const weatherElement = document.getElementById('weather');
                     const temperatureElement = document.getElementById('temperature');
-                    const cityElement = document.getElementById('city');
 
-                    weatherElement.textContent = `Clima: ${weather}`;
-                    temperatureElement.textContent = `Temperatura: ${temperature}°C`;
-                    cityElement.textContent = `cidade: ${city}`;
+                    cityElement.textContent = ` ${city}`;
+                    weatherElement.textContent = ` ${weather}`;
+                    temperatureElement.textContent = ` ${temperature}°C`;
 
                 },
                 error: function () {
@@ -221,269 +220,279 @@
 </head>
 
 <body>
-   
+
+    <div class="container-fluid">
         <div class="cabecalho">
             <div class="container">
                 <!-- Dentro da tag <nav>, adicione espaços reservados para clima e temperatura -->
+                    <div id="city" class="links" style="margin-right: 10%;"></div>
                 <div id="weather" class="links" style="margin-right: 10%;"></div>
                 <div id="temperature" class="links" style="margin-right: 10%;"></div>
-                <div id="city" class="links" style="margin-right: 10%;"></div>
             </div>
 
-            <ul class="nav justify-content-center" style="padding-bottom: 30px;">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="principal.html" style="color: black; font-size: x-large;" >Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="sobre.html" style="color: black; font-size: x-large;">Sobre</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contato.html" style="color: black; font-size: x-large;">Fale Conosco</a>
-                </li>
-              </ul>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand">Alfaiate Voador</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="principal.html">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sobre.html">sobre</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contato.html">contato</a>
+                      </li>
+                     
+                
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="palavras relacionadas" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">procurar</button>
+                    </form>
+
+                  </div>
+                </div>
+              </nav>
+
         </div>
-  
 
 
 
 
-    <div class="d-flex flex-row mb-3">
-        <div class="p-2">
-            <div class="card" style="width: 10rem;">
-                <img src="imagem/10.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Franz Reichelt</h5>
-                    <br>
-                    <p class="card-text">
-                        Conhecido como "O Alfaiate Voador", Franz Reichelt era um australiano que
-                        criava roupas masculinas na França durante os anos de 1900. Uma de suas invenções foi um
-                        traje
-                        de paraquedas. Isso mesmo, um traje de paraquedas.
-                    </p>
+
+        <div class="d-flex flex-row mb-3">
+            <div class="p-2">
+                <div class="card" style="width: 10rem;">
+                    <img src="imagem/10.jfif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Franz Reichelt</h5>
+                        <br>
+                        <p class="card-text">
+                            Conhecido como "O Alfaiate Voador", Franz Reichelt era um australiano que
+                            criava roupas masculinas na França durante os anos de 1900. Uma de suas invenções foi um
+                            traje
+                            de paraquedas. Isso mesmo, um traje de paraquedas.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="main">
-            <div class="p-2">
-                <section-1>
-                    <img src="imagem/1.jpg" alt="" width="20%">
-                    <p>Nós já falamos em um par de oportunidades, a en passant, sobre o "pioneiro" Franz Reichelt,
-                        mas
-                        hoje vamos dedicar todo este artigo à sua história kafkiana e absurda. O acervo de filmes da
-                        British Pathé tem um vídeo assustador dele pulando para a morte da Torre Eiffel, em 1912.
-                        Nas
-                        cenas ele usa um traje enorme, precursor do wingsuit, enquanto permanece sorumbático de pé
-                        na
-                        saliência do primeiro nível da torre. Franz hesita por alguns longos segundos e então
-                        mergulha e
-                        cai direto no chão.</p>
-                    </section>
-            </div>
-
-            <div class="section">
-                <section-2>
-                    <img src="imagem/2.jpg" alt="" width="20%">
-                    <p>
-                        O austríaco Franz Reichelt era dono de uma bem-sucedida alfaiataria em Paris. Pouco depois
-                        de
-                        abrir a loja, ele ficou obcecado em desenvolver um tipo de paraquedas que pudesse vestir
-                        para
-                        ser usado como um traje que proporcionasse sustentação em um salto de quaisquer alturas.O
-                        princípio de funcionamento do paraquedas básico foi elaborado por inventores centenas de
-                        anos
-                        antes dos humanos levantarem vôo, primeiro em balões e depois em aviões. Um dos primeiros
-                        esboços de um paraquedas de estrutura rígida pode ser encontrado nos cadernos de notas de
-                        Leonardo da Vinci.
-                        - "Se um homem tiver uma tenda feita de linho, com as aberturas tapadas e com doze braços de
-                        largura e doze de profundidade, ele será capaz de se jogar de qualquer grande altura sem
-                        sofrer
-                        qualquer lesão", escreveu ele.
-                        O inventor croata Fausto Veranzio melhorou o design de Da Vinci substituindo o dossel por um
-                        pedaço de pano parecido com uma vela protuberante. Embora muitas fontes afirmem que Veranzio
-                        testou o paraquedas saltando da Catedral de St Martin em Bratislava, provavelmente nunca
-                        ocorreu.
-                        Foi só no final do século 18, quando um francês chamado Louis-Sébastien Lenormand deu o
-                        primeiro
-                        salto de paraquedas com sucesso e em seguida cunhou a palavra "parachute".
-                    </p>
-                    </section>
-            </div>
-
-            <div class="section">
-                <section-3>
-                    <img src="imagem/3.jpg" alt="" width="20%">
-                    <p>
-                        Com o alvorecer da aviação e os trágicos acidentes que resultaram de desventuras aéreas, a
-                        necessidade de um paraquedas funcional foi fortemente sentida. Foi Charles Broadwick quem
-                        projetou o primeiro paraquedas dobrável que podia ser usado nas costas e desenrolado com a
-                        ajuda
-                        de uma linha estática presa ao balão ou avião. Em uma demonstração bem-sucedida em 1911,
-                        Charles
-                        jogou um manequim do topo da Torre Eiffel. A linha estática ficou tensa, puxou o paraquedas
-                        da
-                        mochila usada pelo manequim e então a linha se rompeu.Nosso herói, Franz Reichelt também
-                        começou
-                        a trabalhar com paraquedas "vestíveis". Seus primeiros projetos usavam 6 metros quadrados de
-                        tecido e pesavam 70 kg pouco práticos. Todos os experimentos que ele conduziu com manequins
-                        do
-                        pátio de seu prédio na rua Gaillon falharam.
-                        No entanto, Franz perseverou e conseguiu reduzir o peso do traje para menos de 25 kg,
-                        dobrando a
-                        área de superfície do material usado. Mas seus testes ainda não tiveram sucesso e seus
-                        manequins
-                        invariavelmente caíam pesadamente no chão. O próprio Franz quebrou a perna ao tentar um
-                        salto de
-                        10 metros sobre uma pilha de palha.
-                        Apesar de suas repetidas falhas, ele recusou-se a ver qualquer falha em seu projeto. Ao
-                        contrário, estava convencido de que, se pudesse aumentar a distância de lançamento, seu
-                        paraquedas seria um sucesso, pois daria aos flaps mais tempo para se desenrolarem
-                        adequadamente.
-                    </p>
-                    </section>
-            </div>
-
-            <div class="section">
-                <section-4>
-                    <img src="imagem/4.jpg" alt="" width="20%">
-                    <p>
-                        Franz começou a solicitar às autoridades permissão para conduzir experimentos na Torre
-                        Eiffel,
-                        mas foi rejeitado a cada vez. Após um ano de tentativas, ele acabou conseguindo a permissão
-                        para
-                        fazê-lo, sob a condição de que o teste fosse realizado por um manequim. Franz concordou, mas
-                        esse nunca foi seu plano.
-
-                        No dia do teste, 4 de fevereiro de 1912, Franz chegou à Torre Eiffel vestido com seu traje
-                        de
-                        paraquedas que era, segundo a imprensa, "apenas um pouco mais volumoso que as roupas
-                        comuns". O
-                        traje não restringia os movimentos do usuário quando o paraquedas estava embalado, e abrir o
-                        paraquedas era tão simples quanto estender os braços para formar uma cruz com o corpo.
-                        Depois de
-                        estendida, a roupa lembrava uma espécie de manto com um vasto capuz de seda, segundo o
-                        jornal Le
-                        Temps.
-
-                        Franz informou aos jornalistas reunidos que a área de superfície do projeto final era de 30
-                        metros quadrados, uma grande melhoria em relação aos seus primeiros projetos. O alfaiate
-                        também
-                        afirmou que o traje estava pesando apenas 9 kg.
-                    </p>
-                    </section>
-            </div>
-
-
-            <div class="section">
-                <section-5>
-                    <img src="imagem/5.jpg" alt="" width="20%">
-                    <p>
-                        Uma grande multidão se reuniu na base da Torre Eiffel para ver, o que eles presumiam, um
-                        manequim sendo jogado do primeiro nível do imponente marco. No entanto, quando Franz se
-                        apresentou vestindo um traje, ficou claro que sua intenção era diferente.
-                        Apesar de estar cercado por uma multidão de policiais e repórteres, poucos tomaram a
-                        iniciativa
-                        de detê-lo. Franz ocultou suas verdadeiros intenções até o último momento, o que pegou todos
-                        de
-                        surpresa, inclusive seus amigos, que tentaram dissuadi-lo. Eles até alegaram que ele teria
-                        amplas e novas oportunidades para provar seu invento, mas Franz simplesmente não quis ouvir
-                        ninguém. Quando questionado se pretendia usar cordas de segurança, ele respondeu:
-                        - "Quero tentar o experimento sozinho e sem truques, pois pretendo provar o valor de minha
-                        invenção."
-                        Para aquelas objeções técnicas urgentes, como a altura da queda ser muito curta para o
-                        paraquedas abrir totalmente, Franz respondeu com desdém:
-                        - "Você vai ver como meus setenta e dois quilos e meu paraquedas darão aos seus argumentos a
-                        mais decisiva das negações."
-                        Por fim, Franz começou a subir as escadas. No caminho, ele fez uma pausa, voltou-se para a
-                        multidão e gritou alegremente: - "Até breve!" Seus amigos continuaram a tentar dissuadi-lo
-                        do
-                        salto, mas foram incapazes de abalar sua determinação. No primeiro convés da torre, com um
-                        pouco
-                        mais de 57 metros de altura, Franz ficou na saliência e hesitou por 40 segundos completos.
-                        Então
-                        saltou.
-                        O paraquedas de Franz mal se abriu. Ele caiu como um tijolo enrolado em seu próprio traje.
-                        Franz
-                        estava morto antes que os primeiros espectadores corressem para a massa mutilada de carne,
-                        ossos
-                        e tecidos. Seus olhos estavam supostamente abertos e dilatados de terror.
-                    </p>
-                    </section>
-            </div>
-
-            <div class="section">
-                <section-6>
-                    <img src="imagem/7.jpg" alt="" width="20%">
-                    <p>
-                        Em qualquer caso, a imprudência de Franz foi muito discutida nos jornais no dia seguinte e
-                        por
-                        vários dias. O comissário da polícia, Louis Lépine, foi obrigado a explicar que Franz não
-                        foi
-                        autorizado a dar um salto humano, como diziam os jornais.
-                        De fato, após a morte de Franz, as autoridades ficaram cautelosas em conceder permissão para
-                        qualquer outro experimento com paraquedas usando a Torre Eiffel. Cada inscrição era
-                        examinada
-                        cuidadosamente e rejeitada se o solicitante já tivesse tentado fazer algo suspeito. Um
-                        inventor
-                        queria testar seu "paraquedas-helicóptero" e foi negado.
-                    </p>
-                    </section>
-            </div>
-
-            <div class="section">
-                <section-7>
-                    <img src="imagem/8.jpg" alt="" width="20%">
-                    <p>
-                        Franz acabou inspirando um videogame, uma obra de teatro e um curta-metragem que narra sua
-                        vida.
-                        Sua história sombria foi contada inúmeras vezes, mas nem sempre da maneira mais lisonjeira.
-                        Logo
-                        após o incidente, um jornalista sugeriu que apenas metade do termo "gênio-louco" se aplicava
-                        a
-                        Franz.
-                        O coitado também virou motivo de piada fácil e inclusive no fim do vídeo da British Pathé é
-                        possível apreciar uma situação bizarra de alguém medindo a cavidade deixada no chão pelo
-                        corpo
-                        de Franz, possivelmente para saber quem tinha ganhado alguma aposta.
-                        Franz Reichelt, que acabou apelidado de "Alfaiate Voador", ganharia com destaque e louvor o
-                        prêmio Darwin se este já existisse.
-                    </p>
-                    </section>
-            </div>
-
-            <div class="videos">
-                <section-8>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/RSS4WJK3Xdw"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    </section>
-
-                    <section-9>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FBN3xfGrx_U"
+            <div class="main">
+                <div class="p-2">
+                    <section-1>
+                        <img src="imagem/1.jpg" alt="" width="20%">
+                        <p>Nós já falamos em um par de oportunidades, a en passant, sobre o "pioneiro" Franz Reichelt,
+                            mas
+                            hoje vamos dedicar todo este artigo à sua história kafkiana e absurda. O acervo de filmes da
+                            British Pathé tem um vídeo assustador dele pulando para a morte da Torre Eiffel, em 1912.
+                            Nas
+                            cenas ele usa um traje enorme, precursor do wingsuit, enquanto permanece sorumbático de pé
+                            na
+                            saliência do primeiro nível da torre. Franz hesita por alguns longos segundos e então
+                            mergulha e
+                            cai direto no chão.</p>
+                        </section>
+                </div>
+                <div class="section">
+                    <section-2>
+                        <img src="imagem/2.jpg" alt="" width="20%">
+                        <p>
+                            O austríaco Franz Reichelt era dono de uma bem-sucedida alfaiataria em Paris. Pouco depois
+                            de
+                            abrir a loja, ele ficou obcecado em desenvolver um tipo de paraquedas que pudesse vestir
+                            para
+                            ser usado como um traje que proporcionasse sustentação em um salto de quaisquer alturas.O
+                            princípio de funcionamento do paraquedas básico foi elaborado por inventores centenas de
+                            anos
+                            antes dos humanos levantarem vôo, primeiro em balões e depois em aviões. Um dos primeiros
+                            esboços de um paraquedas de estrutura rígida pode ser encontrado nos cadernos de notas de
+                            Leonardo da Vinci.
+                            - "Se um homem tiver uma tenda feita de linho, com as aberturas tapadas e com doze braços de
+                            largura e doze de profundidade, ele será capaz de se jogar de qualquer grande altura sem
+                            sofrer
+                            qualquer lesão", escreveu ele.
+                            O inventor croata Fausto Veranzio melhorou o design de Da Vinci substituindo o dossel por um
+                            pedaço de pano parecido com uma vela protuberante. Embora muitas fontes afirmem que Veranzio
+                            testou o paraquedas saltando da Catedral de St Martin em Bratislava, provavelmente nunca
+                            ocorreu.
+                            Foi só no final do século 18, quando um francês chamado Louis-Sébastien Lenormand deu o
+                            primeiro
+                            salto de paraquedas com sucesso e em seguida cunhou a palavra "parachute".
+                        </p>
+                        </section>
+                </div>
+                <div class="section">
+                    <section-3>
+                        <img src="imagem/3.jpg" alt="" width="20%">
+                        <p>
+                            Com o alvorecer da aviação e os trágicos acidentes que resultaram de desventuras aéreas, a
+                            necessidade de um paraquedas funcional foi fortemente sentida. Foi Charles Broadwick quem
+                            projetou o primeiro paraquedas dobrável que podia ser usado nas costas e desenrolado com a
+                            ajuda
+                            de uma linha estática presa ao balão ou avião. Em uma demonstração bem-sucedida em 1911,
+                            Charles
+                            jogou um manequim do topo da Torre Eiffel. A linha estática ficou tensa, puxou o paraquedas
+                            da
+                            mochila usada pelo manequim e então a linha se rompeu.Nosso herói, Franz Reichelt também
+                            começou
+                            a trabalhar com paraquedas "vestíveis". Seus primeiros projetos usavam 6 metros quadrados de
+                            tecido e pesavam 70 kg pouco práticos. Todos os experimentos que ele conduziu com manequins
+                            do
+                            pátio de seu prédio na rua Gaillon falharam.
+                            No entanto, Franz perseverou e conseguiu reduzir o peso do traje para menos de 25 kg,
+                            dobrando a
+                            área de superfície do material usado. Mas seus testes ainda não tiveram sucesso e seus
+                            manequins
+                            invariavelmente caíam pesadamente no chão. O próprio Franz quebrou a perna ao tentar um
+                            salto de
+                            10 metros sobre uma pilha de palha.
+                            Apesar de suas repetidas falhas, ele recusou-se a ver qualquer falha em seu projeto. Ao
+                            contrário, estava convencido de que, se pudesse aumentar a distância de lançamento, seu
+                            paraquedas seria um sucesso, pois daria aos flaps mais tempo para se desenrolarem
+                            adequadamente.
+                        </p>
+                        </section>
+                </div>
+                <div class="section">
+                    <section-4>
+                        <img src="imagem/4.jpg" alt="" width="20%">
+                        <p>
+                            Franz começou a solicitar às autoridades permissão para conduzir experimentos na Torre
+                            Eiffel,
+                            mas foi rejeitado a cada vez. Após um ano de tentativas, ele acabou conseguindo a permissão
+                            para
+                            fazê-lo, sob a condição de que o teste fosse realizado por um manequim. Franz concordou, mas
+                            esse nunca foi seu plano.
+                            No dia do teste, 4 de fevereiro de 1912, Franz chegou à Torre Eiffel vestido com seu traje
+                            de
+                            paraquedas que era, segundo a imprensa, "apenas um pouco mais volumoso que as roupas
+                            comuns". O
+                            traje não restringia os movimentos do usuário quando o paraquedas estava embalado, e abrir o
+                            paraquedas era tão simples quanto estender os braços para formar uma cruz com o corpo.
+                            Depois de
+                            estendida, a roupa lembrava uma espécie de manto com um vasto capuz de seda, segundo o
+                            jornal Le
+                            Temps.
+                            Franz informou aos jornalistas reunidos que a área de superfície do projeto final era de 30
+                            metros quadrados, uma grande melhoria em relação aos seus primeiros projetos. O alfaiate
+                            também
+                            afirmou que o traje estava pesando apenas 9 kg.
+                        </p>
+                        </section>
+                </div>
+                <div class="section">
+                    <section-5>
+                        <img src="imagem/5.jpg" alt="" width="20%">
+                        <p>
+                            Uma grande multidão se reuniu na base da Torre Eiffel para ver, o que eles presumiam, um
+                            manequim sendo jogado do primeiro nível do imponente marco. No entanto, quando Franz se
+                            apresentou vestindo um traje, ficou claro que sua intenção era diferente.
+                            Apesar de estar cercado por uma multidão de policiais e repórteres, poucos tomaram a
+                            iniciativa
+                            de detê-lo. Franz ocultou suas verdadeiros intenções até o último momento, o que pegou todos
+                            de
+                            surpresa, inclusive seus amigos, que tentaram dissuadi-lo. Eles até alegaram que ele teria
+                            amplas e novas oportunidades para provar seu invento, mas Franz simplesmente não quis ouvir
+                            ninguém. Quando questionado se pretendia usar cordas de segurança, ele respondeu:
+                            - "Quero tentar o experimento sozinho e sem truques, pois pretendo provar o valor de minha
+                            invenção."
+                            Para aquelas objeções técnicas urgentes, como a altura da queda ser muito curta para o
+                            paraquedas abrir totalmente, Franz respondeu com desdém:
+                            - "Você vai ver como meus setenta e dois quilos e meu paraquedas darão aos seus argumentos a
+                            mais decisiva das negações."
+                            Por fim, Franz começou a subir as escadas. No caminho, ele fez uma pausa, voltou-se para a
+                            multidão e gritou alegremente: - "Até breve!" Seus amigos continuaram a tentar dissuadi-lo
+                            do
+                            salto, mas foram incapazes de abalar sua determinação. No primeiro convés da torre, com um
+                            pouco
+                            mais de 57 metros de altura, Franz ficou na saliência e hesitou por 40 segundos completos.
+                            Então
+                            saltou.
+                            O paraquedas de Franz mal se abriu. Ele caiu como um tijolo enrolado em seu próprio traje.
+                            Franz
+                            estava morto antes que os primeiros espectadores corressem para a massa mutilada de carne,
+                            ossos
+                            e tecidos. Seus olhos estavam supostamente abertos e dilatados de terror.
+                        </p>
+                        </section>
+                </div>
+                <div class="section">
+                    <section-6>
+                        <img src="imagem/7.jpg" alt="" width="20%">
+                        <p>
+                            Em qualquer caso, a imprudência de Franz foi muito discutida nos jornais no dia seguinte e
+                            por
+                            vários dias. O comissário da polícia, Louis Lépine, foi obrigado a explicar que Franz não
+                            foi
+                            autorizado a dar um salto humano, como diziam os jornais.
+                            De fato, após a morte de Franz, as autoridades ficaram cautelosas em conceder permissão para
+                            qualquer outro experimento com paraquedas usando a Torre Eiffel. Cada inscrição era
+                            examinada
+                            cuidadosamente e rejeitada se o solicitante já tivesse tentado fazer algo suspeito. Um
+                            inventor
+                            queria testar seu "paraquedas-helicóptero" e foi negado.
+                        </p>
+                        </section>
+                </div>
+                <div class="section">
+                    <section-7>
+                        <img src="imagem/8.jpg" alt="" width="20%">
+                        <p>
+                            Franz acabou inspirando um videogame, uma obra de teatro e um curta-metragem que narra sua
+                            vida.
+                            Sua história sombria foi contada inúmeras vezes, mas nem sempre da maneira mais lisonjeira.
+                            Logo
+                            após o incidente, um jornalista sugeriu que apenas metade do termo "gênio-louco" se aplicava
+                            a
+                            Franz.
+                            O coitado também virou motivo de piada fácil e inclusive no fim do vídeo da British Pathé é
+                            possível apreciar uma situação bizarra de alguém medindo a cavidade deixada no chão pelo
+                            corpo
+                            de Franz, possivelmente para saber quem tinha ganhado alguma aposta.
+                            Franz Reichelt, que acabou apelidado de "Alfaiate Voador", ganharia com destaque e louvor o
+                            prêmio Darwin se este já existisse.
+                        </p>
+                        </section>
+                </div>
+                <div class="videos">
+                    <section-8>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RSS4WJK3Xdw"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                         </section>
+                        <section-9>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/FBN3xfGrx_U"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            </section>
+                </div>
             </div>
+
         </div>
 
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="index.html" style="color: black;">Anterior</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="principal.html" style="color: black;">1</a></li>
+                <li class="page-item"><a class="page-link" href="sobre.html" style="color: black;">2</a></li>
+                <li class="page-item"><a class="page-link" href="contato.html" style="color: black;">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="sobre.html" style="color: black;">Proximo</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="index.html" style="color: black;">Anterior</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="principal.html" style="color: black;">1</a></li>
-            <li class="page-item"><a class="page-link" href="sobre.html" style="color: black;">2</a></li>
-            <li class="page-item"><a class="page-link" href="contato.html" style="color: black;">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="sobre.html" style="color: black;">Proximo</a>
-            </li>
-        </ul>
-    </nav>
 
 
 
