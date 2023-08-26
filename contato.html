@@ -64,6 +64,10 @@
         line-height: 30px;
         text-align: justify;
     }
+
+    .contato{
+    border: solid 1px;
+    }
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -170,51 +174,53 @@
             <div class="main">
                 <div class="p-2">
 
-                    <section-1>
-                        <br>
-                        <h1 style="text-align: center;"> Fale Conosco</h1>
-                        <br>
-                        <h6 style="text-align: center;"> Se você tiver alguma dúvida, comentário, sugestão ou apenas
-                            quiser dizer olá, ficaremos felizes em ouvi-lo </h6>
-                        <br>
-                        <div style="text-align: center;">
-                            <!-- Certifique-se de não alterar a ação do formulário-->
-                            <form action="https://api.staticforms.xyz/submit" method="post">
-                                <!-- Substitua por accessKey enviado para seu e-mail -->
-                                <input type="hidden" name="accessKey" value="5b110b94-1d10-48a9-bc5d-dc37e5cb692a">
-                                <!-- Obrigatório -->
-                                <label for="nome"> Seu Nome (obrigatório) </label>
-                                <br>
-                                <input type="text" id="nome" name="nome" required> <!-- Opcional -->
-                                <br>
-                    
-                                <label for="email"> Seu e-mail (obrigatório) </label>
-                                <br>
-                                <input type="email" id="email" name="email" required> <!-- Opcional -->
-                                <br>
-                    
-                                <label for="assunto"> Assunto</label>
-                                <br>
-                                <input type="text" id="assunto" name="assunto" required> <!-- Opcional -->
-                                <br>
-                    
-                                <label for="mensagem"> Sua mensagem</label>
-                                <br>
-                                <textarea name="mensagem" id="mensagem" cols="60" rows="10"></textarea> <!-- Opcional -->
-                                <br>
-                                <br>
-                                <!-- Se você deseja que replyTo seja definido para um e-mail específico -->
-                                <input type="email" name="replyTo" value="contateste8119@gmail.com" disabled>
-                                <!-- Opcional -->
-                                <br>
-                                <!-- Se você deseja que o formulário seja redirecionado para um URL específico após o envio -->
-                                <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
-                                <!-- Opcional -->
-                                <br>
-                                <input type="submit" value=" enviar "/>
-                            </form>
-                        </div>
-                    </section-1>
+                    <div class="contato">
+                        <section-1>
+                            <br>
+                            <h1 style="text-align: center;"> Fale Conosco</h1>
+                            <br>
+                            <h6 style="text-align: center;"> Se você tiver alguma dúvida, comentário, sugestão ou apenas
+                                quiser dizer olá, ficaremos felizes em ouvi-lo </h6>
+                            <br>
+                            <div style="text-align: center;">
+                                <!-- Certifique-se de não alterar a ação do formulário-->
+                                <form action="https://api.staticforms.xyz/submit" method="post">
+                                    <!-- Substitua por accessKey enviado para seu e-mail -->
+                                    <input type="hidden" name="accessKey" value="5b110b94-1d10-48a9-bc5d-dc37e5cb692a">
+                                    <!-- Obrigatório -->
+                                    <label for="nome"> Seu Nome (obrigatório) </label>
+                                    <br>
+                                    <input type="text" id="nome" name="nome" required> <!-- Opcional -->
+                                    <br>
+                        
+                                    <label for="email"> Seu e-mail (obrigatório) </label>
+                                    <br>
+                                    <input type="email" id="email" name="email" required> <!-- Opcional -->
+                                    <br>
+                        
+                                    <label for="assunto"> Assunto</label>
+                                    <br>
+                                    <input type="text" id="assunto" name="assunto" required> <!-- Opcional -->
+                                    <br>
+                        
+                                    <label for="mensagem"> Sua mensagem</label>
+                                    <br>
+                                    <textarea name="mensagem" id="mensagem" cols="60" rows="10"></textarea> <!-- Opcional -->
+                                    <br>
+                                    <br>
+                                    <!-- Se você deseja que replyTo seja definido para um e-mail específico -->
+                                    <input type="email" name="replyTo" value="contateste8119@gmail.com" disabled>
+                                    <!-- Opcional -->
+                                    <br>
+                                    <!-- Se você deseja que o formulário seja redirecionado para um URL específico após o envio -->
+                                    <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
+                                    <!-- Opcional -->
+                                    <br>
+                                    <input type="submit" value=" enviar "/>
+                                </form>
+                            </div>
+                        </section-1>
+                    </div>
                     
 
                 </div>
